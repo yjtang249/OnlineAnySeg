@@ -9,7 +9,7 @@ $(document).ready(function() {
 			slidesToShow: 1,
 			loop: true,
 			infinite: true,
-			autoplay: true,
+			autoplay: false,  // !!!!! cancel AUTOPLAY for carousel in idnex.html
 			autoplaySpeed: 5000,
     }
 

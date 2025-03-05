@@ -523,7 +523,7 @@ var bulmaCarousel = function (_EventEmitter) {
     }, {}) : {};
     // Set default options - dataset attributes are master
     _this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_12__defaultOptions__["a" /* default */], options, elementConfig);
-
+      
     _this._id = Object(__WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* uuid */])('slider');
 
     _this.onShow = _this.onShow.bind(_this);
@@ -846,7 +846,8 @@ var bulmaCarousel = function (_EventEmitter) {
       this._transitioner.init().apply(true, this._setHeight.bind(this));
 
       if (this.options.autoplay) {
-        this._autoplay.init().start();
+        // this._autoplay.init().start();
+        this._autoplay.init().stop();
       }
     }
 
@@ -1033,7 +1034,7 @@ var onMouseLeave = Symbol('onMouseLeave');
 
 var defaultOptions = {
 	autoplay: false,
-	autoplaySpeed: 3000
+	autoplaySpeed: 90000
 };
 
 var Autoplay = function (_EventEmitter) {

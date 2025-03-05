@@ -51,6 +51,44 @@
 </head>
 
 <body>
+  
+  <style>
+    .video-container {
+      width: 30%; /* 每个容器宽度为页面宽度的32%，根据实际情况调整 */
+      display: inline-block; /* 使容器并列排列 */
+      margin: 1%; /* 添加外边距 */
+      vertical-align: top;
+    }
+  
+    video {
+      width: 90%; /* 视频宽度填满容器 */
+      display: inline-block; /* 确保视频占满整个容器宽度 */
+      margin: 0 auto; /* 视频居中 */
+    }
+  
+    .description {
+      text-align: center; /* 文字居中对齐 */
+    }
+    .scale-image {
+        width: 80%; /* 设定特定图片的宽度 */
+        height: auto; /* 保持宽高比 */
+        transition: transform 0.3s ease; /* 添加动画过渡效果 */
+    }
+    .text-image-container {
+      display: flex; /* 使用弹性盒模型布局 */
+      align-items: flex-start; /* 上端对齐 */
+      justify-content: center;
+  }
+  
+  ul {
+    text-align: justify; /* 确保文本左对齐 */
+    list-style-position: inside; /* 列表标记与文本对齐 */
+    font-size: 16px;
+    list-style-type: circle; /* 使用圆形作为项目符号 */
+  
+  }
+  
+  </style>
 
   <!-- Header -->
   <section class="hero">
@@ -117,24 +155,7 @@
                 <span class="link-block">
                   <a target="_blank" class="external-link button is-normal is-rounded is-light">
                     <span class="icon">
-                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" 
-                           data-prefix="fab" data-icon="github" role="img" 
-                           mlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
-                        <path fill="currentColor" 
-                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 
-                                0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 
-                                2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 
-                                2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 
-                                8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 
-                                0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 
-                                1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 
-                                16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 
-                                2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 
-                                48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 
-                                104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 
-                                17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z">
-                        </path>
-                      </svg>
+                      <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                   </a>
@@ -168,30 +189,54 @@
 
 
   <!-- Teaser videos-->
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        
-        <h2 class="title has-text-centered">Real-world Demos</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          
-          <div class="item item-video1">
-            <video poster="" id="tree" autoplay controls muted loop height="100%">
-              <source src="static/videos/real_world1.mp4" type="video/mp4">
-            </video>
-          </div>
+  
 
-          <div class="item item-video1">
-            <video poster="" id="tree" autoplay controls muted loop height="100%">
-              <source src="static/videos/real_world2.mp4" type="video/mp4">
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Real-world Demos</h2>
+        <div id="results-carousel-teaser1" class="carousel results-carousel">
+  
+          <div class="item item-video16">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="static/videos/real_world1.mp4"
+              type="video/mp4">
             </video>
           </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="static/videos/real_world2.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+        
         </div>
-      
       </div>
     </div>
   </section>
+
   <!-- End teaser videos -->
+  
+
+
+  <!-- Contributions -->
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full" style="max-width: 900px;"> <!-- 调整列宽 -->
+          <h2 class="title is-3 has-text-centered">Contributions</h2>
+          <div class="content" style="text-align: justify; font-weight: normal;">  <!-- 去掉加粗 -->
+            <ul>
+              <li style="margin-bottom: 12px;"><span>OnlineAnySeg propose an efficient data structure for organizing sequential 2D masks, which can incrementally maintain the spatial associations between all the masks in real-time.</span></li>
+              <li style="margin-bottom: 12px;"><span>OnlineAnySeg designs a zero-shot online mask merging strategy. By leveraging spatial overlap and multimodal similarity through collaborative filtering, this approach eliminates the dependency on training data, enabling it to maintain good performance even in incomplete scanned scenes.</span></li>
+              <li><span>OnlineAnySeg performs comparably with existing offline methods and gains notable improvements over the SOTA online method on the publicly available benchmark, running at ~15 FPS.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contributions -->
 
   <!-- Abstract -->
   <section class="section hero is-light">
@@ -234,25 +279,6 @@
     </div>
   </section>
   <!--End Overview -->
-
-  <!-- Contributions -->
-  <section class="section hero">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full" style="max-width: 900px;"> <!-- 调整列宽 -->
-          <h2 class="title is-3 has-text-centered">Contributions</h2>
-          <div class="content" style="text-align: justify; font-weight: normal;">  <!-- 去掉加粗 -->
-            <ul>
-              <li style="margin-bottom: 12px;"><span>OnlineAnySeg propose an efficient data structure for organizing sequential 2D masks, which can incrementally maintain the spatial associations between all the masks in real-time.</span></li>
-              <li style="margin-bottom: 12px;"><span>OnlineAnySeg designs a zero-shot online mask merging strategy. By leveraging spatial overlap and multimodal similarity through collaborative filtering, this approach eliminates the dependency on training data, enabling it to maintain good performance even in incomplete scanned scenes.</span></li>
-              <li><span>OnlineAnySeg performs comparably with existing offline methods and gains notable improvements over the SOTA online method on the publicly available benchmark, running at ~15 FPS.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Contributions -->
 
   <!-- Visual results -->
   <section class="hero is-small">
