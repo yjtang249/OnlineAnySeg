@@ -1,0 +1,7 @@
+.vscode
+.idea
+__pycache__
+*/__pycache__
+testing
+shuoming.txt
+
